@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(#182845, #000022);
+}
+
+.title {
+    font-size: 85px;
+    color: #fff;
+    font-weight: 600;
+    animation: flipTitle 2s;
+}
+
+.containerInput {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -15px 0 15px 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.containerInput input {
+    background-color: transparent;
+    border: 0;
+    color: #d3d3ff;
+    outline: none;
+}
+
+.containerInput input::placeholder {
+    color: #d3d3ff;
+}
+.buttonSearch{
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.containerDados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    background-color: #fff0f0;
+    border-radius: 8px;
+}
+
+.containerDados h2 {
+    margin: 16px 0;
+    font-size: 39px;
+}
+
+.containerDados span {
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+@keyframes flipTitle {
+    from {
+        transform: rotateX(90deg);
+    }
+
+    to {
+        transform: rotateX(0);
+    }
+}
+
+
+@media (max-width: 630px) {
+    .title {
+        font-size: 4rem;
+    }
+
+    .containerDados h2 {
+        font-size: 28px;
+    }
+
+    .containerDados{
+        width: 80%;
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 460px){
+    .title{
+        font-size: 3rem;
+        margin-bottom: 16px;
+    }
+}
+
+
