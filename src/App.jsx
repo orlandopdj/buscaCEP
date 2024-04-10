@@ -7,6 +7,7 @@ import './App.css'
 function App() {
   const [input, setInput] = useState('')
   const [dados, setDados] = useState('')
+  const [showStyles, setShowStyles] = useState(false)
 
   const handleSearch = async () => {
     if (input === '') {
@@ -18,10 +19,10 @@ function App() {
       const response = await api.get(`${input}/json`)
       setInput('')
       setDados(response.data)
-      console.log(response.data)
+      setShowStyles(true)
     }
     catch {
-      console.log('Erro ao buscar dados')
+      alert('Erro ao buscar dados')
       setInput('')
     }
   }
@@ -44,13 +45,14 @@ function App() {
 
       </div>
 
-      <main className='containerDados'>
+      {showStyles && <main className='containerDados'>
         {dados.cep && <h2>CEP: {dados.cep}</h2>}
         {dados.logradouro && <span>Rua: {dados.logradouro}</span>}
         {dados.complemento && <span>Complemento: {dados.complemento}</span>}
         {dados.bairro && <span>Bairro: {dados.bairro}</span>}
         {dados.localidade && <span>{dados.localidade} - {dados.uf}</span>}
-      </main>
+      </main>}
+
     </div>
   )
 }
